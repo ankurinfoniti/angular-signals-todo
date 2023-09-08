@@ -6,11 +6,27 @@
           <div class="card-body p-5">
             <h4 class="text-center my-3 pb-3">{{ title }}</h4>
 
-            <form class="d-flex justify-content-center align-items-center mb-4">
+            <form
+              class="d-flex justify-content-center align-items-center mb-4"
+              [formGroup]="todoForm"
+              (ngSubmit)="onSubmit()"
+            >
               <div class="form-outline flex-fill">
-                <input type="text" id="form2" class="form-control" />
+                <input
+                  type="text"
+                  id="form2"
+                  class="form-control"
+                  formControlName="name"
+                />
               </div>
-              <button type="submit" class="btn btn-info ms-2">Add</button>
+              <button
+                type="submit"
+                class="btn ms-2"
+                [class]="todoForm.invalid ? 'btn-danger' : 'btn-info'"
+                [disabled]="todoForm.invalid"
+              >
+                Submit
+              </button>
             </form>
 
             <ul class="list-group mb-0">

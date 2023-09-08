@@ -14,7 +14,7 @@ import { TodoItem } from '../models/todo.interface';
 })
 export class TodoItemComponent {
   @Input() todoItem: TodoItem | undefined;
-  @Output() delete = new EventEmitter<string>();
+  @Output() delete = new EventEmitter<number>();
 
   faTimes = faTimes;
 
