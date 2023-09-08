@@ -9,5 +9,5 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Angular Signal Todo App';
+  title = 'Angular Signals Todo App';
 }
