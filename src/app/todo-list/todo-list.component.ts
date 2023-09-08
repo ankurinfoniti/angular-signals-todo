@@ -23,4 +23,8 @@ export class TodoListComponent {
   ngOnInit() {
     this.todoService.fetchTodoItems();
   }
+
+  onDeleteTodo(todoItemId: string) {
+    this.todoService.deleteTodo(todoItemId);
+  }
 }

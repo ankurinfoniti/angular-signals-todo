@@ -31,4 +31,14 @@ export class TodoService {
       ],
     }));
   }
+
+  deleteTodo(todoItemId: string) {
+    const newTodoList = this.state().todoItems.filter(
+      (todo) => todo.id !== todoItemId
+    );
+
+    this.state.update((state) => ({
+      todoItems: newTodoList,
+    }));
+  }
 }

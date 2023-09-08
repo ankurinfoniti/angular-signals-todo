@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -14,6 +14,11 @@ import { TodoItem } from '../models/todo.interface';
 })
 export class TodoItemComponent {
   @Input() todoItem: TodoItem | undefined;
+  @Output() delete = new EventEmitter<string>();
 
   faTimes = faTimes;
+
+  onDelete() {
+    this.delete.emit(this.todoItem?.id);
+  }
 }

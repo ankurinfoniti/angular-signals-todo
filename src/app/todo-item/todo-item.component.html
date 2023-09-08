@@ -15,7 +15,7 @@
       {{ todoItem.name }}
     </ng-template>
   </div>
-  <a href="javascript:;" data-mdb-toggle="tooltip" title="Remove item">
+  <a href="javascript:;" title="Remove item" (click)="onDelete()">
     <fa-icon [icon]="faTimes" class="text-primary"></fa-icon>
   </a>
 </li>
