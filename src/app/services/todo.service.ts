@@ -11,7 +11,6 @@ export class TodoService {
 
   fetchTodoItems() {
     this.state.update((state) => ({
-      ...state,
       todoItems: [
         {
           id: '1',
