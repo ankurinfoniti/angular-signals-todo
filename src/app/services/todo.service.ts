@@ -44,6 +44,20 @@ export class TodoService {
     }));
   }
 
+  updateCompleted(data: any) {
+    const updatedTodoList = this.state().todoItems.map((todo) => {
+      if (todo.id === data.todoItemId) {
+        todo.isCompleted = data.checked;
+      }
+
+      return todo;
+    });
+
+    this.state.update((state) => ({
+      todoItems: updatedTodoList,
+    }));
+  }
+
   deleteTodo(todoItemId: number) {
     const newTodoList = this.state().todoItems.filter(
       (todo) => todo.id !== todoItemId

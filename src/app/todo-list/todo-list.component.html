@@ -33,6 +33,7 @@
               <app-todo-item
                 *ngFor="let todoItem of todoItems()"
                 [todoItem]="todoItem"
+                (isCompletedChanged)="onIsCompletedChange($event)"
                 (delete)="onDeleteTodo($event)"
               ></app-todo-item>
             </ul>

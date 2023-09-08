@@ -9,6 +9,7 @@
       value=""
       aria-label="..."
       [checked]="todoItem.isCompleted"
+      (change)="onCompletedChange($event)"
     />
     <s *ngIf="todoItem.isCompleted; else isCompleted">{{ todoItem.name }}</s>
     <ng-template #isCompleted>

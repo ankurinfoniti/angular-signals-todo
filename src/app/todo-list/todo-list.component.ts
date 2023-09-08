@@ -40,6 +40,10 @@ export class TodoListComponent {
     this.todoForm.reset();
   }
 
+  onIsCompletedChange(data: any) {
+    this.todoService.updateCompleted(data);
+  }
+
   onDeleteTodo(todoItemId: number) {
     this.todoService.deleteTodo(todoItemId);
   }

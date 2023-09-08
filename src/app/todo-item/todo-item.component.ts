@@ -15,8 +15,18 @@ import { TodoItem } from '../models/todo.interface';
 export class TodoItemComponent {
   @Input() todoItem: TodoItem | undefined;
   @Output() delete = new EventEmitter<number>();
+  @Output() isCompletedChanged = new EventEmitter<any>();
 
   faTimes = faTimes;
+
+  onCompletedChange(event: Event) {
+    const data = {
+      checked: (event.target as HTMLInputElement).checked,
+      todoItemId: this.todoItem?.id,
+    };
+
+    this.isCompletedChanged.emit(data);
+  }
 
   onDelete() {
     this.delete.emit(this.todoItem?.id);
