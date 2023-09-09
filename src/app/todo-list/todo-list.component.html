@@ -1,45 +1,43 @@
-<section class="vh-100" style="background-color: #e2d5de">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col col-xl-10">
-        <div class="card" style="border-radius: 15px">
-          <div class="card-body p-5">
-            <h4 class="text-center my-3 pb-3">{{ title }}</h4>
+<div class="container py-5 h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col col-xl-10">
+      <div class="card" style="border-radius: 15px">
+        <div class="card-body p-5">
+          <h4 class="text-center my-3 pb-3">{{ title }}</h4>
 
-            <form
-              class="d-flex justify-content-center align-items-center mb-4"
-              [formGroup]="todoForm"
-              (ngSubmit)="onSubmit()"
+          <form
+            class="d-flex justify-content-center align-items-center mb-4"
+            [formGroup]="todoForm"
+            (ngSubmit)="onSubmit()"
+          >
+            <div class="form-outline flex-fill">
+              <input
+                type="text"
+                id="form2"
+                class="form-control"
+                formControlName="name"
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn ms-2"
+              [class]="todoForm.invalid ? 'btn-danger' : 'btn-info'"
+              [disabled]="todoForm.invalid"
             >
-              <div class="form-outline flex-fill">
-                <input
-                  type="text"
-                  id="form2"
-                  class="form-control"
-                  formControlName="name"
-                />
-              </div>
-              <button
-                type="submit"
-                class="btn ms-2"
-                [class]="todoForm.invalid ? 'btn-danger' : 'btn-info'"
-                [disabled]="todoForm.invalid"
-              >
-                Submit
-              </button>
-            </form>
+              Submit
+            </button>
+          </form>
 
-            <ul class="list-group mb-0">
-              <app-todo-item
-                *ngFor="let todoItem of todoItems()"
-                [todoItem]="todoItem"
-                (isCompletedChanged)="onIsCompletedChange($event)"
-                (delete)="onDeleteTodo($event)"
-              ></app-todo-item>
-            </ul>
-          </div>
+          <ul class="list-group mb-0">
+            <app-todo-item
+              *ngFor="let todoItem of todoItems()"
+              [todoItem]="todoItem"
+              (isCompletedChanged)="onIsCompletedChange($event)"
+              (delete)="onDeleteTodo($event)"
+            ></app-todo-item>
+          </ul>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
