@@ -29,10 +29,6 @@ export class TodoListComponent {
     this.todoItems = todoService.todoItems;
   }
 
-  ngOnInit() {
-    this.todoService.fetchTodoItems();
-  }
-
   onSubmit() {
     const todo = this.todoForm.value;
 
